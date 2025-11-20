@@ -1,0 +1,1 @@
+[PYB002] Crie um programa que peça o preço de dois produtos e calcule o valor total da compra.
