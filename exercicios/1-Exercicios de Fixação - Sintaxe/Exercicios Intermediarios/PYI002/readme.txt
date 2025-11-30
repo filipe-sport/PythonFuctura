@@ -1,0 +1,1 @@
+[PYI002] Escreva um programa que peça dois números inteiros ao usuário e diga qual é o maior, o menor ou se são iguais.

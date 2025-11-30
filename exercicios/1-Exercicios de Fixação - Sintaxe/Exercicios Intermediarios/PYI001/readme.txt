@@ -1,0 +1,1 @@
+[PYI001] Escreva um programa que peça ao usuário que digite um número inteiro e diga se ele é par ou ímpar

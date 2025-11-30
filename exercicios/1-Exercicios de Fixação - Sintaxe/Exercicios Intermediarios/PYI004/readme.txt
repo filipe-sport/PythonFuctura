@@ -1,0 +1,1 @@
+[PYI003] Faça um programa que receba três notas de um aluno, calcule a média e escreva se o aluno está aprovado (média ≥ 7), reprovado (média < 4) ou em prova final (média entre 4 e 7).
