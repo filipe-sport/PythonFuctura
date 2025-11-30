@@ -1,0 +1,1 @@
+[PYI005] Escreva um programa que receba o número do mês (1 a 12) e diga quantos dias ele tem (considerando ano não bissexto).

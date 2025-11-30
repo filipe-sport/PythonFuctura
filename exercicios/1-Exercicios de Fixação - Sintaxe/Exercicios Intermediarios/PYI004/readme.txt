@@ -1,1 +1,1 @@
-[PYI003] Faça um programa que receba três notas de um aluno, calcule a média e escreva se o aluno está aprovado (média ≥ 7), reprovado (média < 4) ou em prova final (média entre 4 e 7).
+[PYI004] Escreva um programa que receba a idade de uma pessoa e diga se ela pode votar ou não, considerando as regras brasileiras para voto obrigatório e facultativo.

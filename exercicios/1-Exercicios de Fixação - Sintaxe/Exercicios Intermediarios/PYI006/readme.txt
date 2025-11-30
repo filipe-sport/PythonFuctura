@@ -1,0 +1,1 @@
+[PYI006] Escreva um programa que receba uma letra do alfabeto e diga se é vogal ou consoante.

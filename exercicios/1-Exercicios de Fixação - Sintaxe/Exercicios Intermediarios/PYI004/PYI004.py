@@ -1,12 +1,8 @@
-n1 = float(input('Entre com a primeira nota do aluno: '))
-n2 = float(input('Entre com a segunda nota do aluno: '))
-n3 = float(input('Entre com a terceira nota do aluno: '))
+idade = int(input('Entre com sua idade: '))
 
-media = (n1 + n2 + n3)/3
-
-if media >= 7:
-    print('O aluno está aprovado!!')
-elif (4 <= media < 7):
-    print('O aluno está em prova final')
+if idade < 16:
+    print('Você não pode votar!!!')
+elif (16 <= idade < 18) or (idade >= 70):
+    print('Seu voto é facultativo!!')
 else:
-    print('Aluno reprovado!!')
+    print('Seu voto é obrigatório!!')
