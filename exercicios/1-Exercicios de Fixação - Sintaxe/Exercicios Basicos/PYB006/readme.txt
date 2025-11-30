@@ -1,0 +1,1 @@
+[PYB006] Crie um programa que peça  o consumo mensal de água de uma residência (em litros) e calcule o valor da conta, considerando que cada litro custa R$ 0,02.

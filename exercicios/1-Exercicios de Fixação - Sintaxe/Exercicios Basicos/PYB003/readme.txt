@@ -1,0 +1,1 @@
+[PYB003] Crie um programa que peça a distância percorrida por um carro (em km) e o tempo gasto (em horas), e calcule sua velocidade média em m/s.

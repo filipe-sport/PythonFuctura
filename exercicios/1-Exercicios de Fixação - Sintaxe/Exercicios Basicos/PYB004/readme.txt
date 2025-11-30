@@ -1,0 +1,1 @@
+[PYB004] Crie um programa que peça o número de horas trabalhadas por um funcionário e o valor da hora de trabalho para calcular seu salário bruto.

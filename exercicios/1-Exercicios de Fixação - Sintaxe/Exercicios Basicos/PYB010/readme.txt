@@ -1,0 +1,1 @@
+[PYB010] Crie um programa que receba o preço à vista de um produto e o número de parcelas para calcular o valor de cada prestação, considerando juros simples de 2% ao mês.

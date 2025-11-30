@@ -1,0 +1,1 @@
+[PYB007] Crie um programa que peça o peso de uma encomenda (em kg) e calcule o valor do frete, considerando R$ 5,00 por kg.

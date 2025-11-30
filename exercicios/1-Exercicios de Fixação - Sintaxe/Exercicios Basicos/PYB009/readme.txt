@@ -1,0 +1,1 @@
+[PYB009] Crie um programa que receba a altura e largura de uma parede (em metros), calcule sua área e determine a quantidade de tinta necessária para pintá-la, considerando que cada litro cobre 2m².
