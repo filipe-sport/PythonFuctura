@@ -1,0 +1,1 @@
+[PYI007] Escreva um programa que receba dois números inteiros e um operador aritmético (+, -, *, /), execute a operação e mostre o resultado. Se o operador for inválido, exiba mensagem de erro.
