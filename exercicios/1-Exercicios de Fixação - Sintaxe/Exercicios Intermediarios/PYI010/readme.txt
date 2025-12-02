@@ -1,0 +1,1 @@
+[PYI010] Escreva um programa que receba a temperatura em Celsius e converta para Fahrenheit ou Kelvin conforme escolha do usuário.

@@ -1,0 +1,1 @@
+[PYI009] Escreva um programa que receba o preço de um produto e a forma de pagamento (1 - à vista, 2 - cartão de crédito, 3 - cartão de débito) e calcule o valor final considerando 10% de desconto para pagamento à vista ou no débito.
