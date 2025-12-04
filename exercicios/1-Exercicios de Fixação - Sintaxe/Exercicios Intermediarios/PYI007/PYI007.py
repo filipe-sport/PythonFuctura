@@ -10,3 +10,6 @@ elif operador == '*':
     print(f'A multiplicação de n1 {operador} n2 é: {n1*n2} ')
 elif operador == '/':
     print(f'A divisão de n1 {operador} n2 é: {n1/n2} ')
+else: 
+    print('Operador Inválido')
+    
