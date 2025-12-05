@@ -1,0 +1,1 @@
+[PYI013] Escreva um programa que receba um número inteiro entre 1 e 7 e mostre o dia da semana correspondente (1 = Domingo, 7 = Sábado). Se inválido, mostre mensagem de erro.
