@@ -1,0 +1,1 @@
+[PYI016] Faça um programa que inicie uma contagem regressiva de 10 até 1, imprimindo cada número na tela.

@@ -1,0 +1,1 @@
+[PYI017] Crie um jogo onde o computador escolhe um número aleatório entre 1 e 100, e o jogador tenta adivinhar. O jogo continua até que o jogador acerte o número.
