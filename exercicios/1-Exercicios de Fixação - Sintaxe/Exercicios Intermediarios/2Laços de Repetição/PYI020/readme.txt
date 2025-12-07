@@ -1,0 +1,1 @@
+[PYI020] Desenvolva um programa que use um loop while para gerar uma sequência de números pares começando em 2, imprimindo-os até que o número seja maior que 20.

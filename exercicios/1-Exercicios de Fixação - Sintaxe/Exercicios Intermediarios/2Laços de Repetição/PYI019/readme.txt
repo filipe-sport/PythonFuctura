@@ -1,0 +1,1 @@
+[PYI019] Peça ao usuário para inserir um número e imprima a tabuada desse número de 1 a 10.
