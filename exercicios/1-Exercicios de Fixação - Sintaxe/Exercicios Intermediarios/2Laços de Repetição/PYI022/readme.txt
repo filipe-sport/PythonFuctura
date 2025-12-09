@@ -1,0 +1,1 @@
+[PYI022] Crie um programa que leia números do usuário até que ele digite zero, então mostre a soma total dos números digitados (excluindo o zero).

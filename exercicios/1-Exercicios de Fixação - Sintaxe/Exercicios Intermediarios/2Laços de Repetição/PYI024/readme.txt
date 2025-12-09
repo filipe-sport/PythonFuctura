@@ -1,0 +1,1 @@
+[PYI024] Faça um programa que receba uma lista de números inteiros e imprima a quantidade de números pares e a quantidade de números ímpares na lista.

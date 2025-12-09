@@ -1,0 +1,1 @@
+[PYI025] Faça um programa que leia vários números positivos e pare a leitura quando um número negativo for digitado. Imprima a média dos números positivos.

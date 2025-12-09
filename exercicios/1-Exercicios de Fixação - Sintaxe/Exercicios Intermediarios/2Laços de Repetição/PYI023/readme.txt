@@ -1,0 +1,1 @@
+[PYI023] Faça um programa que receba uma sequência de números inteiros e imprima o maior e o menor número da sequência. A entrada termina quando o usuário digitar o número zero.

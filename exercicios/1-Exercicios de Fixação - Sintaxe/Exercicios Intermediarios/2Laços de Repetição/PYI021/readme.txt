@@ -1,0 +1,1 @@
+[PYI021] Faça um programa que calcule e imprima a soma dos números de 1 a N, onde N é um número inteiro fornecido pelo usuário.
