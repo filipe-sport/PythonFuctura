@@ -1,0 +1,1 @@
+[PYI027] Faça um programa que leia um texto do usuário e conte quantas vogais ele possui.

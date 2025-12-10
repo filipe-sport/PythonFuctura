@@ -1,0 +1,1 @@
+[PYI026] Crie um programa que receba um número inteiro e imprima todos os seus divisores.
