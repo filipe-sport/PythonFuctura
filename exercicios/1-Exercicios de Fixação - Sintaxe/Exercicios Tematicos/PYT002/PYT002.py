@@ -10,9 +10,10 @@ for enter in range (0,4):
     qtd_Frutas.append(qtdFruta)
     precoQuilo = float(input('Entre com o preco/kg: '))
     preco_Quilos.append(precoQuilo)
-    promocao = bool(input('Entre True ou False: '))
+    promocao = input('Entre True ou False: ')
+    print(promocao.capitalize())
     promocoes.append(promocao)
 
 for i in range(0,4):
-    print(f'Fruta   Quantidade  Preço/Kg    Promoção')
-    print(f'{frutas[i]}' f'{qtd_Frutas[i]}' f'{preco_Quilos}' f'{promocoes}')
+    print(f'Fruta\t   Quantidade\t  Preço/Kg\t    Promoção')
+    print(f'{frutas[i]}\t' f'{qtd_Frutas[i]}\t' f'{preco_Quilos[i]}\t' f'{promocoes[i]}')
