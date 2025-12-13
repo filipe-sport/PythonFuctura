@@ -11,6 +11,6 @@ print(min(tup_total))
 usuario = int(input('Entre com um número inteiro: '))
 
 if usuario in tup_total:
-    print(f'O número digitado está na tupla ')
+    print('O número digitado está na tupla')
 else:
-    print('O numero digitado não está na tupla')
+    print('O número digitado não está na tupla')
