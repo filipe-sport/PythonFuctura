@@ -1,0 +1,1 @@
+[PYL004] Remova a segunda cor da lista.

@@ -1,0 +1,1 @@
+Crie uma lista com três cores e mostre-a na tela.

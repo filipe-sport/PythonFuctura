@@ -1,3 +1,5 @@
+import tabulate
+
 frutas = []
 qtd_Frutas = []
 preco_Quilos = []
@@ -11,9 +13,8 @@ for enter in range (0,4):
     precoQuilo = float(input('Entre com o preco/kg: '))
     preco_Quilos.append(precoQuilo)
     promocao = input('Entre True ou False: ')
-    print(promocao.capitalize())
-    promocoes.append(promocao)
+    promocoes.append(promocao.capitalize())
 
 for i in range(0,4):
-    print(f'Fruta\t   Quantidade\t  Preço/Kg\t    Promoção')
+    print(f'Fruta\t Quantidade\t Preço/Kg\t Promoção')
     print(f'{frutas[i]}\t' f'{qtd_Frutas[i]}\t' f'{preco_Quilos[i]}\t' f'{promocoes[i]}')

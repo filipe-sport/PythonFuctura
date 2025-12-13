@@ -1,0 +1,1 @@
+[PYL005] Peça ao usuário para adicionar quantas cores ele quiser à lista de cores.

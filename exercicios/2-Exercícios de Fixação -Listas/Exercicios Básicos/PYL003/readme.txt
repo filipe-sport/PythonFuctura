@@ -1,0 +1,1 @@
+[PYL003] Adicione uma nova cor ao final da lista.
