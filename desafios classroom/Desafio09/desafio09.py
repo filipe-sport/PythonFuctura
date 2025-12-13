@@ -8,12 +8,8 @@ print(cadastro)
 
 cadastro['Data de Nascimento'] = '14/06/1984'
 
-print(cadastro)
-
 cadastro['peso'] = float(input('Entre com seu novo peso: '))
 
-print(cadastro)
-
-del cadastro['peso']
+del cadastro['altura']
 
 print(cadastro)
