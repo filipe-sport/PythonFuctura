@@ -17,7 +17,7 @@ print(mostrar_primeiro)
 mostrar_ultimo = convidados[-1]
 print(mostrar_ultimo)
 
-alterar_convidado1 = convidados.insert(1, 'Yuri')
+convidados[1] = 'Yuri'
 print(convidados)
 
 
