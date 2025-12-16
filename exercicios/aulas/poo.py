@@ -17,6 +17,7 @@ class Carro:
     
     #Metodo para frear o carro
     def frear(self,valor):
+        pass
     
     #Método para acelerar o carro:
     def acelerar(self,valor):
