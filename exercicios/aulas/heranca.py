@@ -13,6 +13,7 @@ class Cachorro(Animal):
         return "Au au au" 
     def buscar_bolinha(self):
         return f'{self.nome} está buscando a bolinha' 
+        
 class Gato(Animal):
     def __init__(self, nome, idade, cor_pelo):
         super().__init__(nome, idade)
