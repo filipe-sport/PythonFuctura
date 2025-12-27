@@ -1,104 +1,21 @@
 class Midia:
-    def __init__(self, titulo, autor, ano, id,):
-        self.titulo = titulo
-        self.autor = autor
-        self.ano = ano
-        self.id = id
-        self.__disponivel = True
-
-      
-    def cadastrar(self):
-        pass
-    def listar(self):
-        pass
-    def buscar(self):
-        pass
-    def emprestar(self):        
-        Midia.set_dispor(transacao = 'emprestar')
-    def devolver(self):
-        Midia.set_dispor(transacao = 'devolver')
-    def remover(self):
-        pass
-    def get_dispor(self):
-        return self.__disponivel
-    def set_dispor(self, transacao):
-        if transacao == 'emprestar':
-            self.__disponivel = False
-        elif transacao == 'devolver':
-            self.__disponivel = True
-
-
-class Livro(Midia):
-    def __init__(self, titulo, autor, ano, id):
-        super().__init__(titulo, autor, ano, id)
+    def __init__(self):
+        self.dados = {}
     
-    def cadastrar(self):
-        pass
-    def listar(self):
-        pass
-    def buscar(self):
-        pass
-    def emprestar(self):        
-        Midia.set_dispor(transacao = 'emprestar')
-    def devolver(self):
-        Midia.set_dispor(transacao = 'devolver')
-    def remover(self):
-        pass
-    def get_dispor(self):
-        return self.__disponivel
-    def set_dispor(self, transacao):
-        if transacao == 'emprestar':
-            self.__disponivel = False
-        elif transacao == 'devolver':
-            self.__disponivel = True
+    def cadastrar_midia(self, id, titulo):
+        if 'midia' not in self.dados:
+            self.dados['midia'] = {id : titulo}
+        else:
+            self.dados['midia'].update({id : titulo})
+    def lista_titulos(self):
+        for id, titulo in self.dados['midia'].items():
+            print(id, titulo)
+    def apaga_titulo(self, id):
+        del self.dados['midia'] [id]
 
-class Revista(Midia):
-    def __init__(self, titulo, autor, ano, id):
-        super().__init__(titulo, autor, ano, id)
-
-    def cadastrar(self):
-        pass
-    def listar(self):
-        pass
-    def buscar(self):
-        pass
-    def emprestar(self):        
-        Midia.set_dispor(transacao = 'emprestar')
-    def devolver(self):
-        Midia.set_dispor(transacao = 'devolver')
-    def remover(self):
-        pass
-    def get_dispor(self):
-        return self.__disponivel
-    def set_dispor(self, transacao):
-        if transacao == 'emprestar':
-            self.__disponivel = False
-        elif transacao == 'devolver':
-            self.__disponivel = True
-            
-class Filme(Midia):
-    def __init__(self, titulo, autor, ano, id, isbn, edicao, duracao):
-        super().__init__(titulo, autor, ano, id)
-        self.isbn = isbn
-        self.edicao = edicao
-        self.duracao = duracao
-
-    def cadastrar(self):
-        pass
-    def listar(self):
-        pass
-    def buscar(self):
-        pass
-    def emprestar(self):        
-        Midia.set_dispor(transacao = 'emprestar')
-    def devolver(self):
-        Midia.set_dispor(transacao = 'devolver')
-    def remover(self):
-        pass
-    def get_dispor(self):
-        return self.__disponivel
-    def set_dispor(self, transacao):
-        if transacao == 'emprestar':
-            self.__disponivel = False
-        elif transacao == 'devolver':
-            self.__disponivel = True
+bd = Midia()
+bd.cadastrar_midia(1, 'Pequeno Principe')
+bd.cadastrar_midia(2, 'Predador')
+bd.cadastrar_midia(3, 'Anjos da Noite')
+#bd.apaga_titulo(2)
+bd.lista_titulos()
