@@ -1,17 +1,17 @@
 class Midia:
     def __init__(self):
-        self.dados = {}
+        self.cadastro = {}
     
     def cadastrar_midia(self, id, titulo):
-        if 'midia' not in self.dados:
-            self.dados['midia'] = {id : titulo}
+        if 'midia' not in self.cadastro:
+            self.cadastro['midia'] = {id : titulo}
         else:
-            self.dados['midia'].update({id : titulo})
+            self.cadastro['midia'].update({id : titulo})
     def lista_titulos(self):
-        for id, titulo in self.dados['midia'].items():
+        for id, titulo in self.cadastro['midia'].items():
             print(id, titulo)
     def apaga_titulo(self, id):
-        del self.dados['midia'] [id]
+        del self.cadastro['midia'] [id]
 
 bd = Midia()
 bd.cadastrar_midia(1, 'Pequeno Principe')
