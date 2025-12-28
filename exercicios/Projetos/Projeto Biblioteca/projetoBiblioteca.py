@@ -4,49 +4,55 @@ class Midia:
     biblioteca = {}
     
     def adicionar():
-        titulo = input('Qual obra deseja adicionar? ')
-        autor = input('Qual o autor da obra? ')
-        Midia.biblioteca[titulo] = autor
+        titulo = input('Qual midia deseja adicionar: ')
+        autor = input('Entre com o autor da midia: ')
+        ano = input('Entre com o ano da midia: ')
+        id = input('Entre com o id da mídia: ')
+        Midia.biblioteca[titulo] = {'autor': autor, 'ano': ano, 'id': id}
         print('Livro adicionado com sucesso!')
 
     def listar():
         if Midia.biblioteca:
-            print('Sua estante de livros: ')
+            print('Sua lista de livros: ')
         print('-' * 30)
-        for titulo, autor in Midia.biblioteca.items():
-            print(f'{titulo} - {autor}')
+
+        for titulo, dados in Midia.biblioteca.items():
+            autor = dados['autor']
+            ano = dados['ano']
+            print(f'{titulo} - {autor} - {ano}')
             print('-' * 30)
 
     def buscar():
         titulo = input('Qual livro está buscando?')
         if titulo in Midia.biblioteca:
-            print(f'Livro: {titulo} - Autor: {Midia.biblioteca[titulo]}')
+            print(f'Livro: {titulo} - Dados: {Midia.biblioteca[titulo]}')
             print('-' * 30)
 
     def emprestar():
         print('-' * 30)
         print("Livros disponíveis: ")
-        for titulo, autor in Midia.biblioteca:
+        for titulo, dados in Midia.biblioteca.items():
+            autor = dados['autor']
             print(f'{titulo} - {autor}')
             print('-' * 30)
         livro = input('Qual livro vc quer emprestado? ')
         if livro in Midia.biblioteca:
             print('Emprestimo feito com sucesso!')
             dia = date.today().day
-            print('Hoje é dia {dia}  e sua devolução é em 10 dias')
+            print(f'Hoje é dia {dia}  e sua devolução é em 10 dias')
         else:
             print('O livro não está disponível!')
 
     def deletar():
-        titulo = input('Qual obra deseja deletar? ')
+        titulo = input('Qual Midia deseja deletar? ')
         if titulo in Midia.biblioteca:
             del Midia.biblioteca[titulo]
             print('-' * 30)
-            print('Obra foi deletada com sucesso!')
+            print('Midia foi deletada com sucesso!')
             print('-' * 30)
         else:
             print('-' * 30)
-            print('Obra não foi encontrada!')
+            print('Midia não foi encontrada!')
             print('-' * 30)
     
 
@@ -94,10 +100,27 @@ class Midia:
                 print('Entrada inválida. Encerrando.')
                 break
 
-Midia.loop()
+class Revista(Midia):
+    def __init__(self):
+        super().__init__()
+    
 
+class Filme(Midia):
+    def __init__(self):
+        super().__init__()
+    
+class Livro(Midia)        :
+    def __init__(self):
+        super().__init__()
+    
 
-            
+obtendo_class = input('Entre com a midia Desejada: 1 - Revista, 2 - Livro, 3 - Filme: ')
+if obtendo_class == '1':
+    Revista.loop()
+elif obtendo_class == '2':
+    Livro.loop()
+elif obtendo_class == '3':
+    Filme.loop()
     
 
 
