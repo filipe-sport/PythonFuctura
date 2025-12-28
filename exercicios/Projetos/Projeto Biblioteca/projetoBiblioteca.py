@@ -1,6 +1,12 @@
 from datetime import date
 
-class Midia:
+class Midia():
+    def __init__(self, titulo, autor, ano, id):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano = ano
+        self.id = id
+        
     biblioteca = {}
     
     def adicionar():
