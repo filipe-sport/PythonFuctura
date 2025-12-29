@@ -6,6 +6,7 @@ class Midia():
         self.autor = autor
         self.ano = ano
         self.id = id
+        self.__disponibilidade = True
         
     biblioteca = {}
     
@@ -16,7 +17,7 @@ class Midia():
         id = input('Entre com o id da mídia: ')
         Midia.biblioteca[titulo] = {'autor': autor, 'ano': ano, 'id': id}
         print('Livro adicionado com sucesso!')
-
+        
     def listar():
         if Midia.biblioteca:
             print('Sua lista de livros: ')
@@ -31,10 +32,14 @@ class Midia():
     def buscar():
         titulo = input('Qual livro está buscando?')
         if titulo in Midia.biblioteca:
-            print(f'Livro: {titulo} - Dados: {Midia.biblioteca[titulo]}')
+            if titulo in Midia.biblioteca.items():
+                autor = titulo['autor']
+                ano = titulo['ano']
+            print(f'Livro: {titulo} - Dados: Autor: {autor} - Ano: {ano}')
             print('-' * 30)
 
     def emprestar():
+        
         print('-' * 30)
         print("Livros disponíveis: ")
         for titulo, dados in Midia.biblioteca.items():
@@ -42,12 +47,20 @@ class Midia():
             print(f'{titulo} - {autor}')
             print('-' * 30)
         livro = input('Qual livro vc quer emprestado? ')
+        
         if livro in Midia.biblioteca:
-            print('Emprestimo feito com sucesso!')
-            dia = date.today().day
-            print(f'Hoje é dia {dia}  e sua devolução é em 10 dias')
+            print('Emprestimo feito com sucesso!')                     
         else:
             print('O livro não está disponível!')
+    
+    def devolver():
+        print('-' * 30)
+        livro = input('Qual livro vc quer devolver? ')
+        
+        if livro in Midia.biblioteca:
+            print('Devolução feita com sucesso!')                           
+        else:
+            print('Erro de operação!!')
 
     def deletar():
         titulo = input('Qual Midia deseja deletar? ')
@@ -67,8 +80,9 @@ class Midia():
         print('2. Para listar livros. ')
         print('3. Para buscar livros. ')
         print('4. Para emprestar. ')
-        print('5. Para deletar. ')
-        print('6. Para fechar a biblioteca. ')
+        print('5. para devolver.')
+        print('6. Para deletar. ')
+        print('7. Para fechar a biblioteca. ')
     
     def finalizar():
         print('1. Sim')
@@ -87,8 +101,10 @@ class Midia():
             elif escolha == '4':
                 Midia.emprestar()
             elif escolha == '5':
-                Midia.deletar()
+                Midia.devolver()
             elif escolha == '6':
+                Midia.deletar()
+            elif escolha == '7':
                 print('Até a proxima!!')
                 break
             else:
@@ -128,5 +144,3 @@ elif obtendo_class == '2':
 elif obtendo_class == '3':
     Filme.loop()
     
-
-
