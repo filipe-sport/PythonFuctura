@@ -6,7 +6,7 @@ class Midia():
         self.autor = autor
         self.ano = ano
         self.id = id
-        self.__disponibilidade = True
+        self.disponibilidade = True
         
     biblioteca = {}
     
@@ -15,7 +15,9 @@ class Midia():
         autor = input('Entre com o autor da midia: ')
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
-        Midia.biblioteca[titulo] = {'autor': autor, 'ano': ano, 'id': id}
+        disponibilidade = True
+        
+        Midia.biblioteca[titulo] = {'autor': autor, 'ano': ano, 'id': id, 'disponivel' : disponibilidade}
         print('Livro adicionado com sucesso!')
         
     def listar():
@@ -49,7 +51,8 @@ class Midia():
         livro = input('Qual livro vc quer emprestado? ')
         
         if livro in Midia.biblioteca:
-            print('Emprestimo feito com sucesso!')                     
+            print('Emprestimo feito com sucesso!')
+            Midia.biblioteca[livro]['disponivel'] = False                     
         else:
             print('O livro não está disponível!')
     
@@ -57,7 +60,7 @@ class Midia():
         print('-' * 30)
         livro = input('Qual livro vc quer devolver? ')
         
-        if livro in Midia.biblioteca:
+        if (livro in Midia.biblioteca) and (Midia.biblioteca[livro]['disponivel'] == False):
             print('Devolução feita com sucesso!')                           
         else:
             print('Erro de operação!!')

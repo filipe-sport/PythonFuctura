@@ -6,11 +6,11 @@ camadas (modelo, controle, interface) e menu
 interativo.
 
 Deve conter (mínimo obrigatório)
-✔ Classe pai Midia com atributos comuns (título, autor, ano, id)
+✔ Classe pai Midia com atributos comuns (título, autor, ano, id) = OK
 ✔ Subclasses Livro, Revista, Filme com atributos específicos (ex.:
 ISBN, edição, duração)
 ✔ Encapsulamento para atributo __disponivel (privado)
-✔ Métodos emprestar(contato) e devolver() que atualizam
+✔ Métodos emprestar(contato) e devolver() que atualizam = OK
 disponibilidade e histórico básico
 ✔ Polimorfismo: método obter_tipo() que retorna o tipo da mídia
 (implementado diferente nas subclasses)
