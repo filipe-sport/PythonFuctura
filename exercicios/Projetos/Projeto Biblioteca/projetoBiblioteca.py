@@ -6,7 +6,7 @@ class Midia():
         self.autor = autor
         self.ano = ano
         self.id = id
-        self.disponibilidade = True
+        self.__disponibilidade = True
         
     biblioteca = {}
     
@@ -15,10 +15,12 @@ class Midia():
         autor = input('Entre com o autor da midia: ')
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
-        disponibilidade = True
-        
-        Midia.biblioteca[titulo] = {'autor': autor, 'ano': ano, 'id': id, 'disponivel' : disponibilidade}
+        disponivel = True        
+        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel}
         print('Livro adicionado com sucesso!')
+
+        print(Midia.biblioteca[titulo]['titulo'])
+        print(Midia.biblioteca[titulo]['autor'])
         
     def listar():
         if Midia.biblioteca:
@@ -32,12 +34,20 @@ class Midia():
             print('-' * 30)
 
     def buscar():
-        titulo = input('Qual livro está buscando?')
-        if titulo in Midia.biblioteca:
-            if titulo in Midia.biblioteca.items():
-                autor = titulo['autor']
-                ano = titulo['ano']
-            print(f'Livro: {titulo} - Dados: Autor: {autor} - Ano: {ano}')
+        busca = input('Qual livro, autor ou tipo de midia está buscando? ')
+        if busca in Midia.biblioteca:
+            #Fazer verificação de metodos para achar um valor dentro de um dicionário e mostrar todo o dicionário
+            print(Midia.biblioteca.get(busca))
+            if((busca == Midia.biblioteca[busca]['titulo']) or (busca == Midia.biblioteca.get(busca)) ):
+                titulo = Midia.biblioteca[busca]['titulo']
+                autor = list(Midia.biblioteca.values())
+                print(autor)
+                
+                
+                print(f'Livro: Título: {titulo} - Autor: {autor}')
+                print('-' * 30)
+        else:
+            print('Livro não encontrado!')
             print('-' * 30)
 
     def emprestar():
@@ -61,7 +71,8 @@ class Midia():
         livro = input('Qual livro vc quer devolver? ')
         
         if (livro in Midia.biblioteca) and (Midia.biblioteca[livro]['disponivel'] == False):
-            print('Devolução feita com sucesso!')                           
+            print('Devolução feita com sucesso!')
+            Midia.biblioteca[livro]['disponivel'] = True
         else:
             print('Erro de operação!!')
 
@@ -112,8 +123,7 @@ class Midia():
                 break
             else:
                 print('Opção inválida.')
-                continue
-            
+                continue            
             Midia.finalizar()
             final = input('Deseja mais alguma coisa? ')
             if final == '1':
@@ -125,19 +135,23 @@ class Midia():
                 print('Entrada inválida. Encerrando.')
                 break
 
+
+class Livro(Midia):
+    def __init__(self, titulo, autor, ano, id, isbn):
+        super().__init__(titulo, autor, ano, id)
+        self.isbn = isbn  
+
 class Revista(Midia):
-    def __init__(self):
-        super().__init__()
-    
+    def __init__(self, titulo, autor, ano, id, edicao):
+        super().__init__(titulo, autor, ano, id)
+        self.edicao = edicao
+          
 
 class Filme(Midia):
-    def __init__(self):
-        super().__init__()
-    
-class Livro(Midia)        :
-    def __init__(self):
-        super().__init__()
-    
+    def __init__(self, titulo, autor, ano, id, duracao):
+        super().__init__(titulo, autor, ano, id)
+        self.duracao = duracao
+
 
 obtendo_class = input('Entre com a midia Desejada: 1 - Revista, 2 - Livro, 3 - Filme: ')
 if obtendo_class == '1':
