@@ -18,9 +18,6 @@ class Midia():
         disponivel = True        
         Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel}
         print('Livro adicionado com sucesso!')
-
-        print(Midia.biblioteca[titulo]['titulo'])
-        print(Midia.biblioteca[titulo]['autor'])
         
     def listar():
         if Midia.biblioteca:
@@ -37,8 +34,8 @@ class Midia():
         busca = input('Qual livro, autor ou tipo de midia está buscando? ')
         if busca in Midia.biblioteca:
             #Fazer verificação de metodos para achar um valor dentro de um dicionário e mostrar todo o dicionário
-            titulo = Midia.biblioteca[busca]['titulo']
-            autor = Midia.biblioteca[busca]['autor']
+            titulo = Midia.biblioteca.items()
+            autor = Midia.biblioteca.items()
             print(f'Livro: Título: {titulo} - Autor: {autor}')
             print('-' * 30)
         else:
