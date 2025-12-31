@@ -37,15 +37,10 @@ class Midia():
         busca = input('Qual livro, autor ou tipo de midia está buscando? ')
         if busca in Midia.biblioteca:
             #Fazer verificação de metodos para achar um valor dentro de um dicionário e mostrar todo o dicionário
-            print(Midia.biblioteca.get(busca))
-            if((busca == Midia.biblioteca[busca]['titulo']) or (busca == Midia.biblioteca.get(busca)) ):
-                titulo = Midia.biblioteca[busca]['titulo']
-                autor = list(Midia.biblioteca.values())
-                print(autor)
-                
-                
-                print(f'Livro: Título: {titulo} - Autor: {autor}')
-                print('-' * 30)
+            titulo = Midia.biblioteca[busca]['titulo']
+            autor = Midia.biblioteca[busca]['autor']
+            print(f'Livro: Título: {titulo} - Autor: {autor}')
+            print('-' * 30)
         else:
             print('Livro não encontrado!')
             print('-' * 30)
