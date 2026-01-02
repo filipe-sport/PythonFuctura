@@ -1,5 +1,3 @@
-from datetime import date
-
 class Midia():
     def __init__(self, titulo, autor, ano, id):
         self.titulo = titulo
