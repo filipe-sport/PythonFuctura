@@ -32,15 +32,17 @@ class Midia():
 
     def buscar():
         busca = input('Qual livro, autor ou tipo de midia está buscando? ')
-        if busca in Midia.biblioteca:
+        
+        for titulo, dados in Midia.biblioteca.items():
+            autor = dados['autor']
             #Fazer verificação de metodos para achar um valor dentro de um dicionário e mostrar todo o dicionário
-            titulo = Midia.biblioteca.items()
-            autor = Midia.biblioteca.items()
-            print(f'Livro: Título: {titulo} - Autor: {autor}')
-            print('-' * 30)
-        else:
-            print('Livro não encontrado!')
-            print('-' * 30)
+            if (busca.lower() in titulo.lower()) or (busca.lower() in autor.lower()):
+                print(f'Livro: Título: {titulo.capitalize()} - Autor: {autor.capitalize()}')
+                print('-' * 30)
+                
+            else:
+                print('Livro não encontrado!')
+                print('-' * 30)
 
     def emprestar():
         
