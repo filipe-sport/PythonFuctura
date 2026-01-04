@@ -13,9 +13,11 @@ class Midia():
         autor = input('Entre com o autor da midia: ')
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
-        disponivel = True        
-        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel}
+        tipo = input()
+        disponivel = True
+        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel, 'tipo' : tipo}
         print('Livro adicionado com sucesso!')
+        
         
     def listar():
         if Midia.biblioteca:
@@ -79,15 +81,20 @@ class Midia():
             print('-' * 30)
             print('Midia não foi encontrada!')
             print('-' * 30)
+
+    def obter_tipo(tipo):
+        return tipo
+        
     
 
     def menu():
-        print('1. Para adicionar novos livros. ')
-        print('2. Para listar livros. ')
-        print('3. Para buscar livros. ')
-        print('4. Para emprestar. ')
-        print('5. para devolver.')
-        print('6. Para deletar. ')
+        x = Midia.obter_tipo(tipo)
+        print(f'1. Para adicionar {x}(s). ')
+        print(f'2. Para listar {x}(s). ')
+        print(f'3. Para buscar {x}(s). ')
+        print('4. Para emprestar {x}(s). ')
+        print(f'5. para devolver {x}(s).')
+        print(f'6. Para deletar {x}(s). ')
         print('7. Para fechar a biblioteca. ')
     
     def finalizar():
@@ -129,17 +136,19 @@ class Midia():
 
 
 class Livro(Midia):
+    
     def __init__(self, titulo, autor, ano, id, isbn):
         super().__init__(titulo, autor, ano, id)
-        self.isbn = isbn  
+        self.isbn = isbn
 
 class Revista(Midia):
+    
     def __init__(self, titulo, autor, ano, id, edicao):
         super().__init__(titulo, autor, ano, id)
         self.edicao = edicao
-          
 
 class Filme(Midia):
+    
     def __init__(self, titulo, autor, ano, id, duracao):
         super().__init__(titulo, autor, ano, id)
         self.duracao = duracao
@@ -147,9 +156,17 @@ class Filme(Midia):
 
 obtendo_class = input('Entre com a midia Desejada: 1 - Revista, 2 - Livro, 3 - Filme: ')
 if obtendo_class == '1':
+    tipo = 'revista'
     Revista.loop()
+    Revista.obter_tipo(tipo)
+    
 elif obtendo_class == '2':
+    tipo = 'livro'
     Livro.loop()
+    Livro.obter_tipo(tipo)
 elif obtendo_class == '3':
+    tipo = 'filme'
     Filme.loop()
+    Filme.obter_tipo(tipo)
+    
     
