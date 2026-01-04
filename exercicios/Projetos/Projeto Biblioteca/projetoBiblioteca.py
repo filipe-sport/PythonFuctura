@@ -13,7 +13,7 @@ class Midia():
         autor = input('Entre com o autor da midia: ')
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
-        tipo = input()
+        tipo = input('Entre com o tipo da mídia: ')
         disponivel = True
         Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel, 'tipo' : tipo}
         print('Livro adicionado com sucesso!')
@@ -35,9 +35,11 @@ class Midia():
         
         for titulo, dados in Midia.biblioteca.items():
             autor = dados['autor']
+            tipo = dados['tipo']
+            
             #Fazer verificação de metodos para achar um valor dentro de um dicionário e mostrar todo o dicionário
-            if (busca.lower() in titulo.lower()) or (busca.lower() in autor.lower()):
-                print(f'Livro: Título: {titulo.capitalize()} - Autor: {autor.capitalize()}')
+            if (busca.lower() in titulo.lower()) or (busca.lower() in autor.lower() or busca.lower() in tipo.lower()):
+                print(f'Livro: Título: {titulo.capitalize()} - Autor: {autor.capitalize()} - Tipo: {tipo.capitalize()}')
                 print('-' * 30)
                 
             else:
@@ -92,7 +94,7 @@ class Midia():
         print(f'1. Para adicionar {x}(s). ')
         print(f'2. Para listar {x}(s). ')
         print(f'3. Para buscar {x}(s). ')
-        print('4. Para emprestar {x}(s). ')
+        print(f'4. Para emprestar {x}(s). ')
         print(f'5. para devolver {x}(s).')
         print(f'6. Para deletar {x}(s). ')
         print('7. Para fechar a biblioteca. ')
