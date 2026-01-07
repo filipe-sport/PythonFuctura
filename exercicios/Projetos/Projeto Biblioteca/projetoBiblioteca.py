@@ -7,6 +7,7 @@ class Midia():
         self.__disponibilidade = True
         
     biblioteca = {}
+    historico_emprestimo = []
     
     def adicionar():
         titulo = input('Qual midia deseja adicionar: ')
@@ -20,15 +21,24 @@ class Midia():
         
         
     def listar():
-        if Midia.biblioteca:
+        escolha = input('1 - Listar todos os livros / 2 - Listar livros emprestados: ')
+        if (escolha == 1):
             print('Sua lista de livros: ')
-        print('-' * 30)
-
-        for titulo, dados in Midia.biblioteca.items():
-            autor = dados['autor']
-            ano = dados['ano']
-            print(f'{titulo} - {autor} - {ano}')
             print('-' * 30)
+            for titulo, dados in Midia.biblioteca.items():
+                autor = dados['autor']
+                ano = dados['ano']
+                print(f'{titulo} - {autor} - {ano}')
+                print('-' * 30)
+        else:
+            for livros in Midia.historico_emprestimo:
+                titulo = livros
+                for titulo, dados in Midia.biblioteca.items():
+                    autor = dados['autor']
+                    ano = dados ['ano']                    
+                    print(f'Título: {titulo} - Autor: {autor} - Ano: {ano}')
+        
+
 
     def buscar():
         busca = input('Qual livro, autor ou tipo de midia está buscando? ')
@@ -55,6 +65,7 @@ class Midia():
             print(f'{titulo} - {autor}')
             print('-' * 30)
         livro = input('Qual livro vc quer emprestado? ')
+        Midia.historico_emprestimo.append(livro)
         
         if livro in Midia.biblioteca:
             print('Emprestimo feito com sucesso!')
