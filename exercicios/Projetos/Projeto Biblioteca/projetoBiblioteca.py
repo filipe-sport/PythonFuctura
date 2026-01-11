@@ -35,8 +35,7 @@ class Midia():
                 for titulo, dados in Midia.biblioteca.items():
                     autor = dados['autor']
                     ano = dados ['ano']                    
-                    print(f'Título: {titulo} - Autor: {autor} - Ano: {ano}')
-        
+                    print(f'Título: {titulo} - Autor: {autor} - Ano: {ano}')        
 
 
     def buscar():
@@ -95,8 +94,7 @@ class Midia():
             print('-' * 30)
 
     def obter_tipo(tipo):
-        return tipo
-        
+        return tipo     
     
 
     def menu():
@@ -146,7 +144,6 @@ class Midia():
                 print('Entrada inválida. Encerrando.')
                 break
 
-
 class Livro(Midia):
     
     def __init__(self, titulo, autor, ano, id, isbn):
@@ -180,5 +177,3 @@ elif obtendo_class == '3':
     tipo = 'filme'
     Filme.loop()
     Filme.obter_tipo(tipo)
-    
-    
