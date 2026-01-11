@@ -15,8 +15,8 @@ class Midia():
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
         tipo = input('Entre com o tipo da mídia: ')
-        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': Midia.__disponivel, 'tipo' : tipo}
-        print('Livro adicionado com sucesso!')
+        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': True, 'tipo' : tipo}
+        print(f'{tipo.capitalize()} adicionado com sucesso!')
         
         
     def listar():
@@ -54,22 +54,28 @@ class Midia():
                 print('Livro não encontrado!')
                 print('-' * 30)
 
-    def emprestar():
+    def emprestar(contato):
+        if len(Midia.biblioteca) == 0:
+            print('Nenhum Livro Cadastrado!!')
         
-        print('-' * 30)
-        print("Livros disponíveis: ")
+        
         for titulo, dados in Midia.biblioteca.items():
             autor = dados['autor']
-            print(f'{titulo} - {autor}')
-            print('-' * 30)
-        livro = input('Qual livro vc quer emprestado? ')
-        Midia.historico_emprestimo.append(livro)
-        
-        if livro in Midia.biblioteca:
-            print('Emprestimo feito com sucesso!')
-            Midia.biblioteca[livro]['disponivel'] = False                     
-        else:
-            print('O livro não está disponível!')
+            livro_disponivel = dados['disponivel']
+            
+            if livro_disponivel is True:
+                print('-' * 30)
+                print(f"{tipo.capitalize()}(s) disponíveis: ")
+                print(f'{titulo} - {autor}')
+                print('-' * 30)       
+            
+                livro = input(f'Qual {tipo} vc quer emprestado? ')
+                if (livro in Midia.biblioteca) and (Midia.biblioteca[livro]['disponivel'] == True):
+                    Midia.historico_emprestimo.append(livro)
+                    print('Emprestimo feito com sucesso!')
+                    Midia.biblioteca[livro]['disponivel'] = False
+            else:
+                print('Nenhuma midia disponível')
     
     def devolver():
         print('-' * 30)
@@ -122,7 +128,8 @@ class Midia():
             elif escolha == '3':
                 Midia.buscar()
             elif escolha == '4':
-                Midia.emprestar()
+                contato = input('Entre com seu número de contato: ')
+                Midia.emprestar(contato)
             elif escolha == '5':
                 Midia.devolver()
             elif escolha == '6':

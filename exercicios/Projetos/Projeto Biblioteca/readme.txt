@@ -8,13 +8,13 @@ interativo.
 Deve conter (mínimo obrigatório)
 ✔ Classe pai Midia com atributos comuns (título, autor, ano, id) = OK
 ✔ Subclasses Livro, Revista, Filme com atributos específicos (ex.:
-ISBN, edição, duração)
-✔ Encapsulamento para atributo __disponivel (privado)
-✔ Métodos emprestar(contato) e devolver() que atualizam = OK
+ISBN, edição, duração) = OK
+✔ Encapsulamento para atributo __disponivel (privado) = OK
+✔ Métodos emprestar(contato) e devolver() que atualizam
 disponibilidade e histórico básico
 ✔ Polimorfismo: método obter_tipo() que retorna o tipo da mídia
 (implementado diferente nas subclasses)
 ✔ Lista de mídias cadastradas e lista (ou registro) de empréstimos
-ativos
+ativos = OK
 ✔ Menu interativo para: cadastrar, listar, buscar (por
-título/autor/tipo), emprestar, devolver, remover
+título/autor/tipo), emprestar, devolver, remover = OK
