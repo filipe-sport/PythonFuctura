@@ -4,7 +4,7 @@ class Midia():
         self.autor = autor
         self.ano = ano
         self.id = id
-        self.__disponibilidade = True
+        self.__disponivel = True
         
     biblioteca = {}
     
@@ -14,8 +14,7 @@ class Midia():
         ano = input('Entre com o ano da midia: ')
         id = input('Entre com o id da mídia: ')
         tipo = input('Entre com o tipo da mídia: ')
-        disponivel = True
-        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': disponivel, 'tipo' : tipo}
+        Midia.biblioteca[titulo] = {'titulo' : titulo, 'autor': autor, 'ano': ano, 'id': id, 'disponivel': Midia.__disponivel, 'tipo' : tipo}
         print('Livro adicionado com sucesso!')
         
         
